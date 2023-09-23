@@ -1,12 +1,10 @@
-const SingleCourse = ({course}) => {
-    return(<div>{course.term} CS {course.number}: {course.title}</div>)
-}
+import './CourseList.css';
+import CourseCard from './CourseCard';
 
 const CourseList = ({list}) => {
-    Object.entries(list).map(([id, course]) => {console.log(id); console.log(course)});
     return (
-        <div>
-            {Object.entries(list).map(([id,course])=> <SingleCourse key={id} course={course}/>)}
+        <div className='course-list'>
+            {Object.entries(list).map(([id,course])=> <CourseCard key={id} course={course}/>)}
         </div>
     );
 }
