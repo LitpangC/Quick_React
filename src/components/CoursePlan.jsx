@@ -6,7 +6,7 @@ export const CoursePlan = ({selected}) => (
                 Select courses by click the 
                 course card.</h2>
             : selected.map(x => {
-                console.log(x);
+
                 return(
                     <div key={x.id}>
                         CS {x.number}: {x.title}, {x.meets}

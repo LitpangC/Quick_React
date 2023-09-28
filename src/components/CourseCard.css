@@ -1,3 +1,7 @@
 .card .selected{
     background-color: lightblue;
 }
+
+.card .unselectable{
+    background-color: lightgray;
+}
