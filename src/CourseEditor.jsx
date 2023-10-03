@@ -1,4 +1,4 @@
-// import { useDbUpdate } from '../utilities/firebase';
+import { useDbUpdate } from './utilities/firebase';
 import { useFormData } from './utilities/useformdata';
 import { useNavigate } from 'react-router-dom';
 const validateCourseData = (key, val) => {
@@ -33,7 +33,7 @@ const ButtonBar = ({message, disabled}) => {
 };
 
 export const CourseEditor = ({course}) => {
-  //const [update, result] = useDbUpdate(`/users/${user.id}`);
+  const [update, result] = useDbUpdate(`/courses/${course.id}`);
   const [state, change] = useFormData(validateCourseData, course);
   const submit = (evt) => {
     evt.preventDefault();
