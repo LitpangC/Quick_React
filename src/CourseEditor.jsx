@@ -32,8 +32,8 @@ const ButtonBar = ({message, disabled}) => {
   );
 };
 
-export const CourseEditor = ({course}) => {
-  const [update, result] = useDbUpdate(`/courses/${course.id}`);
+export const CourseEditor = ({id, course}) => {
+  const [update, result] = useDbUpdate(`/courses/${id}`);
   const [state, change] = useFormData(validateCourseData, course);
   const submit = (evt) => {
     evt.preventDefault();
@@ -43,10 +43,10 @@ export const CourseEditor = ({course}) => {
   };
 
   return (
-    <form onSubmit={null} noValidate className={state.errors ? 'was-validated' : null}>
-      <InputField name="Title" text="Title" state={state} change={change} />
-      <InputField name="Meeting Time" text="Meeting Time" state={state} change={change} />
-      <ButtonBar disabled={true}/>
+    <form onSubmit={submit} noValidate className={state.errors ? 'was-validated' : null}>
+      <InputField name="title" text="Title" state={state} change={change} />
+      <InputField name="meets" text="Meeting Time" state={state} change={change} />
+      <ButtonBar message={result?.message}/>
     </form>
   )
 };
