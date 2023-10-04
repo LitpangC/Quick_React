@@ -15,8 +15,8 @@ import { getDatabase } from "firebase/database";
 const Main = () => {
   const [data, error] = useDbData("/");
 
-  if (error) return <h1>Error loading user data: {`${error}`}</h1>;
-  if (data === undefined) return <h1>Loading user data...</h1>;
+  if (error) return <h1>Error loading data: {`${error}`}</h1>;
+  if (data === undefined) return <h1>Loading data...</h1>;
   if (!data) return <h1>No user data found</h1>;
 
   return (
