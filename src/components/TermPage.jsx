@@ -3,7 +3,7 @@ import CourseList from "./CourseList";
 import { useState } from "react";
 import { Modal } from "./Modal";
 import { CoursePlan } from "./CoursePlan";
-const TermPage = ({allCourses}) => {
+const TermPage = ({profile, allCourses}) => {
     const [term, changeTerm] = useState("Fall");
     const [selected, setSelected] = useState([]);
     const toggleSelected = (item) => setSelected(
@@ -22,7 +22,7 @@ const TermPage = ({allCourses}) => {
             </Modal>
             <TermSelector term={term} changeTerm={changeTerm}></TermSelector>
             <CourseList 
-                term={term} list={allCourses} 
+                term={term} list={allCourses} profile={profile}
                 selected={selected} toggleSelected={toggleSelected}/>
         </div>
     );
