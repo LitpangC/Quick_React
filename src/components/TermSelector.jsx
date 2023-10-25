@@ -11,7 +11,7 @@ const TermSelector = ({term, changeTerm}) =>{
 }
 
 const TermButton = ({current, term, changeTerm}) =>{
-    return (<button type="button" className="btn btn-primary term-button" disabled={current == term} onClick={()=>changeTerm(term)}>{term}</button>);
+    return (<button type="button"  htmlFor={term} data-cy={term} className="btn btn-primary term-button" disabled={current == term} onClick={()=>changeTerm(term)}>{term}</button>);
 }
 
 export default TermSelector;
